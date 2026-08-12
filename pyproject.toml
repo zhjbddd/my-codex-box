@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my-codex-box"
+version = "0.1.0"
+description = "A quote-verified book deconstruction CLI and reusable Agent Skill."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [{ name = "zhjbddd" }]
+keywords = ["agent-skill", "book-notes", "codex", "epub", "pdf"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Text Processing",
+]
+dependencies = [
+  "defusedxml>=0.7,<1",
+  "pypdf>=6,<7",
+  "requests>=2.32,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+  "ruff>=0.12,<1",
+]
+
+[project.scripts]
+book-taker = "book_taker.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/zhjbddd/my-codex-box"
+Issues = "https://github.com/zhjbddd/my-codex-box/issues"
+Source = "https://github.com/zhjbddd/my-codex-box"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

@@ -1,0 +1,24 @@
+{
+  "name": "my-codex-box",
+  "version": "0.1.0",
+  "description": "Turn local text-based books into structured notes with source-verified quotations.",
+  "author": {
+    "name": "zhjbddd",
+    "url": "https://github.com/zhjbddd"
+  },
+  "homepage": "https://github.com/zhjbddd/my-codex-box",
+  "repository": "https://github.com/zhjbddd/my-codex-box",
+  "license": "Apache-2.0",
+  "keywords": ["book-notes", "codex", "epub", "pdf", "skill"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "My Codex Box",
+    "shortDescription": "Create structured book notes with verified quotations",
+    "longDescription": "Extract a local text PDF, EPUB, TXT, or Markdown book, analyze it chapter by chapter, and reject generated quotations that cannot be found in the source.",
+    "developerName": "zhjbddd",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "websiteURL": "https://github.com/zhjbddd/my-codex-box",
+    "defaultPrompt": ["Turn this local book into structured notes with source-verified quotations."]
+  }
+}

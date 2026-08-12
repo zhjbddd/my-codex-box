@@ -1,0 +1,7 @@
+interface:
+  display_name: "Book Taker"
+  short_description: "Create chapter notes with source-verified quotes"
+  default_prompt: "Use $book-taker to turn this local book into structured notes with source-verified quotations."
+
+policy:
+  allow_implicit_invocation: true
