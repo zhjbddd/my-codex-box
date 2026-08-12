@@ -3,7 +3,10 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-import tomllib
+try:
+    import tomllib
+except ModuleNotFoundError:  # pragma: no cover - exercised by the Python 3.10 CI jobs
+    import tomli as tomllib
 
 ROOT = Path(__file__).resolve().parents[1]
 SYNCED_FILES = ("__init__.py", "extract.py", "verify.py")
