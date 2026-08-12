@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "quote": {
+      "type": "object",
+      "required": ["text", "page"],
+      "properties": {
+        "text": {"type": "string", "minLength": 1, "maxLength": 200},
+        "page": {"type": "integer", "minimum": 0},
+        "verified": {"type": ["boolean", "null"]},
+        "note": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "ria_card": {
+      "type": "object",
+      "required": ["r", "i", "a", "page"],
+      "properties": {
+        "r": {"type": "string", "minLength": 1, "maxLength": 150},
+        "i": {"type": "string", "minLength": 1, "maxLength": 120},
+        "a": {"type": "string", "minLength": 1, "maxLength": 150},
+        "page": {"type": "integer", "minimum": 0},
+        "r_verified": {"type": ["boolean", "null"]},
+        "r_note": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": ["chapter_no", "title", "summary", "key_points", "quotes", "ria_cards"],
+  "properties": {
+    "chapter_no": {"type": "integer", "minimum": 1},
+    "title": {"type": "string", "minLength": 1},
+    "summary": {"type": "string", "maxLength": 300},
+    "key_points": {
+      "type": "array",
+      "items": {"type": "string", "maxLength": 60}
+    },
+    "quotes": {"type": "array", "items": {"$ref": "#/$defs/quote"}},
+    "ria_cards": {"type": "array", "items": {"$ref": "#/$defs/ria_card"}}
+  },
+  "additionalProperties": false
+}
