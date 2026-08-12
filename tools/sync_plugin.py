@@ -6,6 +6,11 @@ from __future__ import annotations
 import shutil
 from pathlib import Path
 
+try:
+    import tomllib
+except ModuleNotFoundError:  # pragma: no cover - exercised by the Python 3.10 CI jobs
+    import tomli as tomllib
+
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE_SOURCE = ROOT / "src" / "book_taker"
 SKILL_SOURCE = ROOT / "skills" / "book-taker"
@@ -16,8 +21,6 @@ PLUGIN_MANIFEST = ROOT / "plugins" / "my-codex-box" / ".codex-plugin" / "plugin.
 
 def versions() -> tuple[str, str, str]:
     import json
-
-    import tomllib
 
     project = tomllib.loads((ROOT / "pyproject.toml").read_text("utf-8"))
     package_version = project["project"]["version"]
