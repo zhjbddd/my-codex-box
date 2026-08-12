@@ -29,7 +29,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-  "pytest>=8,<9",
+  "pytest>=8,<10",
   "ruff>=0.12,<1",
   "tomli>=2,<3; python_version < '3.11'",
 ]
