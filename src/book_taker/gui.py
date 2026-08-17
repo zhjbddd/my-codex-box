@@ -49,7 +49,14 @@ def main(argv: list[str] | None = None) -> int:
         row=1, column=0, columnspan=3, sticky=tk.W, pady=(0, 12)
     )
 
-    def add_row(row: int, label: str, variable: tk.StringVar, *, browse=None, show: str | None = None):
+    def add_row(
+        row: int,
+        label: str,
+        variable: tk.StringVar,
+        *,
+        browse=None,
+        show: str | None = None,
+    ):
         ttk.Label(frame, text=label).grid(row=row, column=0, sticky=tk.W, pady=4)
         entry = ttk.Entry(frame, textvariable=variable, show=show or "")
         entry.grid(row=row, column=1, sticky=tk.EW, padx=8, pady=4)
@@ -85,7 +92,9 @@ def main(argv: list[str] | None = None) -> int:
 
     options = ttk.Frame(frame)
     options.grid(row=7, column=0, columnspan=3, sticky=tk.W, pady=(8, 4))
-    ttk.Checkbutton(options, text="仅本地提取（不调用模型）", variable=dry_run_var).pack(anchor=tk.W)
+    ttk.Checkbutton(
+        options, text="仅本地提取（不调用模型）", variable=dry_run_var
+    ).pack(anchor=tk.W)
     ttk.Checkbutton(options, text="覆盖上次输出", variable=overwrite_var).pack(anchor=tk.W)
     ttk.Label(
         frame,
