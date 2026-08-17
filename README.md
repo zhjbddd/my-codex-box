@@ -33,10 +33,33 @@ model work:
 - UTF-8, GB18030, and Big5 text input
 - JSON intermediate artifacts and a Markdown report
 - OpenAI-compatible Chat Completions endpoint
-- Standalone CLI plus Agent Skill packaging
+- Standalone CLI, desktop client, and Agent Skill packaging
 
-Not supported: OCR for scanned PDFs, DRM removal, batch processing, GUI, or a claim that generated
+Not supported: OCR for scanned PDFs, DRM removal, batch processing, or a claim that generated
 notes replace the original work.
+
+## 下载客户端
+
+Windows、macOS 和 Linux 可从
+[GitHub Releases](https://github.com/zhjbddd/my-codex-box/releases/latest)
+下载独立桌面客户端，无需先安装 Python。下载页见 [`docs/download.html`](docs/download.html)。
+
+| 系统 | 文件 |
+| --- | --- |
+| Windows | [`book-taker-client-windows-x64.exe`](https://github.com/zhjbddd/my-codex-box/releases/latest/download/book-taker-client-windows-x64.exe) |
+| macOS (Apple silicon) | [`book-taker-client-macos-arm64`](https://github.com/zhjbddd/my-codex-box/releases/latest/download/book-taker-client-macos-arm64) |
+| Linux | [`book-taker-client-linux-x64`](https://github.com/zhjbddd/my-codex-box/releases/latest/download/book-taker-client-linux-x64) |
+
+打开客户端后选择书籍即可开始。调用模型时把 API 密钥填进窗口即可；密钥只留在本次会话内存中，不会写入磁盘或命令行参数。仅本地提取时可不填密钥。
+
+从源码启动同一个客户端：
+
+```bash
+python -m pip install -e .
+book-taker-client
+```
+
+维护者在打 `v*` 标签后，`Release client` 工作流会构建并上传上述文件。
 
 ## Install the CLI
 
