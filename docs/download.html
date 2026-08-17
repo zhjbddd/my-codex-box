@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>下载 Book Taker 客户端</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f3ee;
+        --ink: #1d1a16;
+        --muted: #5c564c;
+        --card: #fffdf8;
+        --line: #d9d0c3;
+        --accent: #8a4b2f;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Han Sans SC", "Noto Sans SC", "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+      }
+      main {
+        max-width: 840px;
+        margin: 0 auto;
+        padding: 48px 20px 72px;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 2rem;
+      }
+      p {
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        margin: 28px 0;
+      }
+      a.card {
+        display: block;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 20px;
+        text-decoration: none;
+        color: inherit;
+      }
+      a.card strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--accent);
+      }
+      code {
+        font-size: 0.9rem;
+      }
+      .note {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 16px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>下载 Book Taker 客户端</h1>
+      <p>
+        独立桌面客户端，选择本地 PDF / EPUB / TXT / Markdown 即可拆书。
+        不需要先安装 Python。API 密钥只保留在本次会话内存中。
+      </p>
+      <div class="grid">
+        <a class="card" href="https://github.com/zhjbddd/my-codex-box/releases/latest/download/book-taker-client-windows-x64.exe">
+          <strong>Windows</strong>
+          <code>book-taker-client-windows-x64.exe</code>
+        </a>
+        <a class="card" href="https://github.com/zhjbddd/my-codex-box/releases/latest/download/book-taker-client-macos-arm64">
+          <strong>macOS</strong>
+          <code>book-taker-client-macos-arm64</code>
+        </a>
+        <a class="card" href="https://github.com/zhjbddd/my-codex-box/releases/latest/download/book-taker-client-linux-x64">
+          <strong>Linux</strong>
+          <code>book-taker-client-linux-x64</code>
+        </a>
+      </div>
+      <div class="note">
+        <p>
+          若最新 Release 尚未发布客户端构建，请打开
+          <a href="https://github.com/zhjbddd/my-codex-box/releases/latest">GitHub Releases</a>
+          查看可用文件，或从源码启动：
+        </p>
+        <p><code>python -m pip install -e . && book-taker-client</code></p>
+      </div>
+    </main>
+  </body>
+</html>

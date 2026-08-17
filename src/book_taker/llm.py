@@ -20,7 +20,11 @@ class LLMConfig:
     api_key: str | None
 
 
-def resolve_config(base_url: str | None = None, model: str | None = None) -> LLMConfig:
+def resolve_config(
+    base_url: str | None = None,
+    model: str | None = None,
+    api_key: str | None = None,
+) -> LLMConfig:
     resolved_base = base_url or os.environ.get("OPENAI_BASE_URL") or DEFAULT_BASE_URL
     resolved_base = resolved_base.rstrip("/")
     if not resolved_base.endswith("/v1"):
@@ -37,7 +41,7 @@ def resolve_config(base_url: str | None = None, model: str | None = None) -> LLM
     return LLMConfig(
         base_url=resolved_base,
         model=model or os.environ.get("OPENAI_MODEL") or DEFAULT_MODEL,
-        api_key=os.environ.get("OPENAI_API_KEY"),
+        api_key=api_key or os.environ.get("OPENAI_API_KEY"),
     )
 
 

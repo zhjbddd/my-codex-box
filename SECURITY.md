@@ -26,7 +26,8 @@ untrusted. Security-sensitive behavior includes:
 - archive and XML parsing;
 - filesystem writes below the selected output directory;
 - prompt-injection resistance when book text is sent to a model;
-- API credential handling and outbound requests;
+- API credential handling and outbound requests, including session-only
+  desktop-client key entry that must not be written to disk or command arguments;
 - quote-verification logic and fail-closed filtering;
 - Skill instructions that can influence an agent's shell, network, or file behavior.
 

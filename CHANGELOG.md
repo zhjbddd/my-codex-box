@@ -5,6 +5,12 @@ All notable changes to this project will be documented here. The format follows
 
 ## [Unreleased]
 
+### Added
+
+- Desktop client for Windows, macOS, and Linux, with GitHub Release download links.
+- Shared Book Taker pipeline used by both the CLI and the desktop client.
+- Session-only API key entry in the client; keys are not written to disk.
+
 ## [0.1.0] - 2026-08-12
 
 ### Added
